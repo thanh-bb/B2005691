@@ -204,4 +204,3 @@ Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/thanh-bb/B2005691.git
    dc3306a..3536609  fix-bug -> fix-bug
-PS D:\test>
