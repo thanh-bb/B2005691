@@ -137,7 +137,7 @@ int min (int a, int b){
 	else return b;
 }
 int main (){
-freopen("data.txt", "r", stdin);
+	//freopen("data.txt", "r", stdin);
 	Graph G;
 	int n;
 	scanf("%d", &n);
