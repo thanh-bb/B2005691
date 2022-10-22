@@ -1,0 +1,206 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS D:\test> git init
+Initialized empty Git repository in D:/test/.git/
+PS D:\test> git config user.name "ThanhThanh"
+PS D:\test> git config user.email "carror1420@gmail.com"
+PS D:\test> remote add B2005691 https://github.com/thanh-bb/B2005691.git
+remote : The term 'remote' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ remote add B2005691 https://github.com/thanh-bb/B2005691.git
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (remote:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\test> git remote add B2005691 https://github.com/thanh-bb/B2005691.git
+PS D:\test> git remote -v
+B2005691        https://github.com/thanh-bb/B2005691.git (fetch)
+B2005691        https://github.com/thanh-bb/B2005691.git (push)
+PS D:\test> git add .
+PS D:\test> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   EX12.c
+
+PS D:\test> git comit -m "them file index"
+git: 'comit' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit
+PS D:\test> git commit -m "them file index"
+[master (root-commit) a72ad43] them file index
+ 1 file changed, 214 insertions(+)
+ create mode 100644 EX12.c
+PS D:\test> git status
+On branch master
+nothing to commit, working tree clean
+PS D:\test> git log
+commit a72ad43dc282b1d72be4518a189958418c2fc8f8 (HEAD -> master)
+Author: ThanhThanh <carror1420@gmail.com>
+Date:   Sat Oct 22 10:39:30 2022 +0700
+
+    them file index
+PS D:\test> git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS D:\test> git push B2005691 master
+PS D:\test> git push B2005691 master
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 1.27 KiB | 1.27 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/thanh-bb/B2005691.git
+ * [new branch]      master -> master
+PS D:\test> git branch
+* master
+PS D:\test> git pull B2005691 master
+From https://github.com/thanh-bb/B2005691
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+PS D:\test> git push B2005691 master
+Everything up-to-date
+PS D:\test> git add .
+PS D:\test> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   EX12.c
+        new file:   Hello.txt
+
+PS D:\test> git push B2005691 master
+Everything up-to-date
+PS D:\test>  git commit -m "them file index"
+[master 36fb81f] them file index
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+ create mode 100644 Hello.txt
+PS D:\test> git push B2005691 master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 379 bytes | 379.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/thanh-bb/B2005691.git
+   a72ad43..36fb81f  master -> master
+PS D:\test> git commit -m ""
+error: switch `m' requires a value
+PS D:\test> git commit -m "new file"
+On branch master
+nothing to commit, working tree clean
+PS D:\test> git commit -m "new file"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Hi.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\test> git add .
+PS D:\test> git commit "new file"
+error: pathspec 'new file' did not match any file(s) known to git
+PS D:\test> git commit -m "new file"
+[master dc3306a] new file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Hi.txt
+PS D:\test> git push B2005691 master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 308 bytes | 308.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/thanh-bb/B2005691.git
+   36fb81f..dc3306a  master -> master
+PS D:\test> git log
+commit dc3306a91125af39df8ce379f5ad0939c11e4c24 (HEAD -> master, B2005691/master)
+Author: ThanhThanh <carror1420@gmail.com>
+Date:   Sat Oct 22 11:08:18 2022 +0700
+
+    new file
+
+commit 36fb81feee2e60da2bcdbb3c5b1e1a31e083269e
+Author: ThanhThanh <carror1420@gmail.com>
+Date:   Sat Oct 22 11:04:16 2022 +0700
+
+    them file index
+
+commit a72ad43dc282b1d72be4518a189958418c2fc8f8
+Author: ThanhThanh <carror1420@gmail.com>
+Date:   Sat Oct 22 10:39:30 2022 +0700
+
+    them file index
+PS D:\test> git reset --hard 36fb81feee2e60da2bcdbb3c5b1e1a31e083269e
+HEAD is now at 36fb81f them file index
+PS D:\test> git reset --hard dc3306a91125af39df8ce379f5ad0939c11e4c24
+HEAD is now at dc3306a new file
+PS D:\test> git branch fix-bug
+PS D:\test> git checkout fix-bug
+Switched to branch 'fix-bug'
+PS D:\test> git branch
+* fix-bug
+  master
+PS D:\test> gir branch fix-bug
+gir : The term 'gir' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path
+was included, verify that the path is correct and try again.
+At line:1 char:1
++ gir branch fix-bug
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (gir:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\test> git branch fix-bug
+fatal: a branch named 'fix-bug' already exists
+PS D:\test> git checkout fix-bug
+Already on 'fix-bug'
+PS D:\test> git branch
+* fix-bug
+  master
+PS D:\test> git add .
+PS D:\test> git commit -m "fix bug"
+On branch fix-bug
+nothing to commit, working tree clean
+PS D:\test> git push B2005691 fix-bug
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'fix-bug' on GitHub by visiting:
+remote:      https://github.com/thanh-bb/B2005691/pull/new/fix-bug
+remote:
+To https://github.com/thanh-bb/B2005691.git
+ * [new branch]      fix-bug -> fix-bug
+PS D:\test> git commit -m "fix-bug"
+On branch fix-bug
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    Hi.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\test> git add .
+PS D:\test> git commit -m "fix bug"
+[fix-bug 3536609] fix bug
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 Hi.txt
+PS D:\test> git push B2005691 fix-bug
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 216 bytes | 216.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/thanh-bb/B2005691.git
+   dc3306a..3536609  fix-bug -> fix-bug
